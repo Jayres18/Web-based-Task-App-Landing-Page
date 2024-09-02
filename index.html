@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RememberThis | Home</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!--Navigation Section-->
+    <div class="navbar">
+      <div class="container">
+        <a class="logo" href="#">Remember<span>This</span></a>
+        <img
+          id="mobile-cta"
+          class="mobile-menu"
+          src="images/menu.svg"
+          alt="Open Navigation"
+        />
+
+        <nav>
+          <img
+            id="mobile-exit"
+            class="mobile-menu-exit"
+            src="images/exit.svg"
+            alt="Close Navigation"
+          />
+          <ul class="primary-nav">
+            <li class="current"><a href="#">Home</a></li>
+            <li><a href="#features-id">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+
+          <ul class="secondary-nav">
+            <li><a href="#contact-id">Contact</a></li>
+            <li class="go-premium-cta"><a href="#">Go Premium</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!--End of Navigation Section-->
+    <!--Start of Hero Section-->
+    <section class="hero">
+      <div class="container">
+        <div class="left-col">
+          <p class="subhead">To Track &amp; Stack</p>
+          <h1>A Task App That Guides You To Productivity.</h1>
+
+          <div class="hero-cta">
+            <a href="#" class="primary-cta">Try for free.</a>
+            <a href="#" class="watch-video-cta"
+              ><img src="images/watch.svg" alt="Watch a Video" />Try for
+              free.</a
+            >
+          </div>
+        </div>
+
+        <img
+          src="images/illustration.svg"
+          class="hero-img"
+          alt="Illustration"
+        />
+      </div>
+    </section>
+    <!--End of Hero Section-->
+    <!--Start of Features Section-->
+    <section class="features-section" id="features-id">
+      <div class="container">
+        <ul class="features-list">
+          <li>Unlimited Task</li>
+          <li>SMS Task Reminders</li>
+          <li>Confetti Explosions upon Task Completions</li>
+          <li>Social Media Announcements</li>
+          <li>Real Time Collaborations</li>
+          <li>Other Awesome Features</li>
+        </ul>
+
+        <img src="images/holding-phone.jpg" alt="Man holding a phone" />
+      </div>
+    </section>
+    <!--End of Features Section-->
+    <!--Start of Testimonial Section-->
+    <section class="testimonial-section">
+      <div class="container">
+        <ul>
+          <li>
+            <img src="images/person1.jpg" alt="Picture of a person" />
+            <blockquote>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Similique numquam fugiat reprehenderit eius blanditiis voluptate
+              veniam culpa dolore nisi possimus?
+            </blockquote>
+            <cite>- Jane Doe</cite>
+          </li>
+          <li>
+            <img src="images/person2.jpg" alt="Picture of a person" />
+            <blockquote>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Similique numquam fugiat reprehenderit eius blanditiis voluptate
+              veniam culpa dolore nisi possimus?
+            </blockquote>
+            <cite>- Rajesh Norkim</cite>
+          </li>
+          <li>
+            <img src="images/person3.jpg" alt="Picture of a person" />
+            <blockquote>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Similique numquam fugiat reprehenderit eius blanditiis voluptate
+              veniam culpa dolore nisi possimus?
+            </blockquote>
+            <cite>- Shiela Gonzalez</cite>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!--End of Testimonial Section-->
+    <!--Start of Contact Section-->
+    <section class="contact-section" id="contact-id">
+      <div class="container">
+        <div class="contact-left">
+          <h2>Contacts</h2>
+          <form action="">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+
+            <label for="message">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+            ></textarea>
+
+            <input
+              type="submit"
+              class="send-message-cta"
+              value="Send message"
+            />
+          </form>
+        </div>
+        <div class="contact-right">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.3004469956854!2d121.04286654032796!3d14.524799278984888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8d077102e51%3A0x3a1fd32959062da4!2sBayani%20Rd%2C%20Taguig%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1725079586869!5m2!1sen!2sph"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const mobileBtn = document.getElementById("mobile-cta");
+      nav = document.querySelector("nav");
+      mobileBtnExit = document.getElementById("mobile-exit");
+
+      mobileBtn.addEventListener("click", () => {
+        nav.classList.add("menu-btn");
+      });
+
+      mobileBtnExit.addEventListener("click", () => {
+        nav.classList.remove("menu-btn");
+      });
+
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const targetId = event.target.getAttribute("href");
+          document.querySelector(targetId).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
